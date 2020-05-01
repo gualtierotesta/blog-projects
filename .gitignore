@@ -1,23 +1,71 @@
-# Compiled class file
+# IDE files
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+.classpath
+.factorypath
+.idea
+.loadpath
+.metadata
+.nb-gradle/
+.project
+.recommenders
+.settings/
+*-iml
+*.iml
+buildTool/
+dist/
+nb-*.xml
+nb*
+nb*.xml
+nbbuild/
+nbdist/
+nbproject
+nbproject/private/
+s.vscode/*
+
+# Java files
 *.class
+.vertx/
 
-# Log file
-*.log
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+!/.mvn/wrapper/maven-wrapper.jar
 
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
+### Gradle ###
+.gradle
+/buildTool/
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
 
 # Package Files #
-*.jar
-*.war
-*.nar
 *.ear
-*.zip
-*.tar.gz
+*.jar
+*.nar
 *.rar
+*.tar.gz
+*.war
+*.zip
 
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
+# other
+.mtj.tmp/
+*.bak
+*.ctxt
+*.log
+*.swp
+*.tmp
+*~
+*~.nib
+bin/
 hs_err_pid*
+tmp/
