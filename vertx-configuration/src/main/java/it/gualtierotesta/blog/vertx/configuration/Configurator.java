@@ -37,7 +37,7 @@ class Configurator {
         // File path: src/resources/config.json
         ConfigStoreOptions fileStoreClasspath = new ConfigStoreOptions()
             .setType("file")
-            .setOptional(true)
+            .setOptional(false)
             .setConfig(new JsonObject().put("path", "config.json"));
 
         // Configuration from System Properties
