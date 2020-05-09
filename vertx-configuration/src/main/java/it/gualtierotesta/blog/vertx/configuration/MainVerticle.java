@@ -1,6 +1,7 @@
-package it.gualtierotesta.blog.vertx_configuration;
+package it.gualtierotesta.blog.vertx.configuration;
 
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.DeploymentOptions;
 import io.vertx.core.Launcher;
 import io.vertx.core.Promise;
 
@@ -11,10 +12,12 @@ public class MainVerticle extends AbstractVerticle {
     }
 
     @Override
-    public void start(Promise<Void> startPromise) throws Exception {
+    public void start(final Promise<Void> startPromise) {
         Configurator.readConfiguration(vertx)
             .onSuccess(configuration -> {
-                System.out.println("Hello " + configuration.getString("user"));
+
+                vertx.deployVerticle(new AVerticle(),
+                    new DeploymentOptions().setConfig(configuration));
                 startPromise.complete();
             })
             .onFailure(startPromise::fail);

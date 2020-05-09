@@ -1,4 +1,4 @@
-package it.gualtierotesta.blog.vertx_configuration;
+package it.gualtierotesta.blog.vertx.configuration;
 
 import io.vertx.config.ConfigRetriever;
 import io.vertx.config.ConfigRetrieverOptions;
@@ -29,16 +29,16 @@ class Configurator {
 
         // Configuration from an external file (file is not mandatory)
         ConfigStoreOptions fileStoreExternal = new ConfigStoreOptions()
-                .setType("file")
-                .setOptional(true)
-                .setConfig(new JsonObject().put("path", EXTERNAL_CONFIG_FILE));
+            .setType("file")
+            .setOptional(true)
+            .setConfig(new JsonObject().put("path", EXTERNAL_CONFIG_FILE));
 
         // Configuration from a file in the application classpath
         // File path: src/resources/config.json
         ConfigStoreOptions fileStoreClasspath = new ConfigStoreOptions()
-                .setType("file")
-                .setOptional(true)
-                .setConfig(new JsonObject().put("path", "config.json"));
+            .setType("file")
+            .setOptional(true)
+            .setConfig(new JsonObject().put("path", "config.json"));
 
         // Configuration from System Properties
         ConfigStoreOptions sysPropsStore = new ConfigStoreOptions().setType("sys");
@@ -53,10 +53,10 @@ class Configurator {
         // 4. Internal (classpath) file
         // Order is "last added wins"
         ConfigRetrieverOptions options = new ConfigRetrieverOptions()
-                .addStore(fileStoreClasspath)
-                .addStore(fileStoreExternal)
-                .addStore(sysPropsStore)
-                .addStore(envPropsStore);
+            .addStore(fileStoreClasspath)
+            .addStore(fileStoreExternal)
+            .addStore(sysPropsStore)
+            .addStore(envPropsStore);
 
         return ConfigRetriever.create(pVertx, options);
     }
