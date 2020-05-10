@@ -1,0 +1,22 @@
+= Vert.x logging with Log4j 2
+
+How to configure Log4J logging in a Vert.x application.
+
+To redirect the internal Vert.x logger to Log4J, the following system property should be set:
+
+[source]
+----
+-Dvertx.logger-delegate-factory-class-name=io.vertx.core.logging.Log4j2LogDelegateFactory
+----
+
+See https://vertx.io/docs/vertx-core/java/#_logging[Logging in Vert.x documentation]
+
+== Links
+
+* https://gualtierotesta.wordpress.com[Blog site]
+* https://vertx.io/docs/[Vert.x Documentation]
+* https://stackoverflow.com/questions/tagged/vert.x?sort=newest&pageSize=15[Vert.x Stack Overflow]
+* https://groups.google.com/forum/?fromgroups#!forum/vertx[Vert.x User Group]
+* https://gitter.im/eclipse-vertx/vertx-users[Vert.x Gitter]
+
+
