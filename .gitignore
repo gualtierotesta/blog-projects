@@ -69,3 +69,4 @@ gradle-app.setting
 bin/
 hs_err_pid*
 tmp/
+.vscode
